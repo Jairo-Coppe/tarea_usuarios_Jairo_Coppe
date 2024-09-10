@@ -1,11 +1,21 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './pages/Home.js';
-//import About from './pages/About';
-import ApiData from './pages/ApiData.js';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home.js";
+import { Usuarios } from "./pages/Usuarios.js";
+import { UsuariosPais } from "./pages/UsuariosPais.js";
 
 function App() {
   return (
-    <Router>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/usuarios" element={<Usuarios />} />
+      <Route path="/usuarios/Pais" element={<UsuariosPais />} />
+    </Routes>
+  );
+}
+
+export default App;
+
+/*<Router>
       <div className="p-4">
         <nav>
           <ul className="flex space-x-4">
@@ -19,15 +29,4 @@ function App() {
               <Link to="/api-data" className="text-blue-500">API Data</Link>
             </li>
           </ul>
-        </nav>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="/about" element={<About />} /> */}
-          <Route path="/api-data" element={<ApiData />} />
-        </Routes>
-      </div>
-    </Router>
-  );
-}
-
-export default App;
+        </nav>*/
